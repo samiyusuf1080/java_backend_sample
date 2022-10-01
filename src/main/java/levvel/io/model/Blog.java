@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Data
 public class Blog {
@@ -22,4 +23,18 @@ public class Blog {
     String author;
     String title;
     String text;
+
+    //ArrayList of Comments to store comments for each post
+    public ArrayList<Comment> comments = new ArrayList<Comment>();
+
+    //Helper Methods
+    public ArrayList<Comment> getallComments(){
+        return comments;
+    }
+
+    public void addNewComment(Comment comment){
+        comments.add(comment);
+    }
+
+
 }
